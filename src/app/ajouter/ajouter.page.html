@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+    <ion-title>Ajouter un contact</ion-title>
+      <ion-icon name="home" flex right class="ion-margin-start" [routerLink]="['/src/app/home']">
+    </ion-icon>
+  </ion-item>
+  </ion-toolbar>
+</ion-header>
+ <ion-content class="ion-padding">
+   <form [formGroup]="createContactForm" (submit)="createContact()">
+  <div class="preference">
+    <ion-item>
+   <ion-label >Nom</ion-label>
+   <ion-textarea formControlName="nom" rows="2" cols="10" placeholder="Enter le nom de contact"></ion-textarea>
+ </ion-item>
+  </div>
+   <div class="preference">
+     <ion-item>
+    <ion-label >Prenom</ion-label>
+    <ion-textarea formControlName="prenom" rows="2" cols="10" placeholder="Enter le prenom"></ion-textarea>
+  </ion-item>
+   </div>
+   <div class="preference">
+    <ion-item>
+   <ion-label >Numéro de telephone 1</ion-label>
+   <ion-textarea formControlName="tel1" rows="2" cols="10" placeholder="Enter le numéro de téléphone 1"></ion-textarea>
+ </ion-item>
+  </div>
+  <div class="preference">
+    <ion-item>
+   <ion-label >Numéro de telephone 2</ion-label>
+   <ion-textarea formControlName="tel2" rows="2" cols="10" placeholder="Enter le numéro de téléphone 2"></ion-textarea>
+ </ion-item>
+  </div>
+  <div class="preference">
+    <ion-item>
+   <ion-label >date de création</ion-label>
+   <ion-textarea formControlName="datecreation" rows="2" cols="10" placeholder="00.00"></ion-textarea>
+ </ion-item>
+  </div>
+  <div class="preference">
+    <ion-item>
+   <ion-label >dérnier date de mise à jour</ion-label>
+   <ion-textarea formControlName="dateupdate" rows="2" cols="10" placeholder="00.00"></ion-textarea>
+ </ion-item>
+  </div>
+  <ion-item>
+    <ion-label>Categories</ion-label>
+    <ion-select multiple="true" cancelText="Nah" okText="Okay!">
+      <ion-select-option value="catégorie">famille</ion-select-option>
+      <ion-select-option value="catégorie">ami</ion-select-option>
+      <ion-select-option value="catégorie">professionel</ion-select-option>
+      <ion-select-option value="catégorie">autre</ion-select-option>
+
+
+    </ion-select>
+  </ion-item>
+<p></p>
+<p></p>
+<br>
+<ion-button
+ color="danger"
+ buttonType="submit" [disabled]="!createContactForm.valid"
+ expand="full"
+ (click)= "createContact()">
+  Valider
+</ion-button>
+</form>
+ </ion-content>
